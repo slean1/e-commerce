@@ -10,7 +10,7 @@ console.log (data);
 {
     data.products.map ((prd: any) => (
         <div id="card">
-            <img id="image" src={prd.images[0]} height="240px" />
+            <img id="image" src={prd.images[0]} height="250px" width="45%" />
 
             <div id="info">
                 <div class="name">
@@ -19,23 +19,72 @@ console.log (data);
                 <div class="name">
                     <em>Descripción: {prd.description}</em>
                 </div>
+                <div class="name">
+                    <p>Precio: {prd.price}</p>
+                </div>
+                <div class="name">
+                    <p>Stock: {prd.stock}</p>
+                </div>
+                <div class="name">
+                    <p>Marca: {prd.brand}</p>
+                </div>
             </div>
         </div>
     ))
 }
 
 <style>
+    #image {
+        width: 100%;
+    }
+
+    #info {
+        width: 100%;
+    }
+    
     #card {
         display: flex;
-        flex-direction: row;
-        width: 30%;
+        flex-direction: column;
+        width: 100%;
         padding: 10px;
         margin: 10px;
+        border: grey 1px solid;
+        border-radius: 8px;
     }
     .name {
         display: flex;
         flex-direction: row;
         margin-left: 10px;
-        border: red 1px solid;
     }
+
+    * {
+        font-family: system-ui, sans-serif;
+        font-size: 10px;
+      }
+
+    /* Media Queries */
+    @media (min-width: 480px) {
+        #card {
+            flex-direction: row;
+        }
+        #image {
+            width: 45%;
+        }
+        #info {
+            width: 55%;
+            padding-left: 10px;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        #card {
+            width: 50%;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        #card {
+            width: 30%;
+        }
+    }    
 </style>
