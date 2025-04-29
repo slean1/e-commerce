@@ -9,8 +9,12 @@ console.log (data);
 
 {
     data.products.map ((prd: any) => (
-        <div id="card">
-            <img id="image" src={prd.images[0]} height="250px" width="45%" />
+        <div id="card" class="product-card">
+            <img id="image" src={prd.images[0]} 
+             height="250px" width="45%"
+             data-second-image={prd.images[1] || prd.images[0]} 
+             data-first-image={prd.images[0]}             
+            />
 
             <div id="info">
                 <div class="name">
@@ -33,6 +37,28 @@ console.log (data);
     ))
 }
 
+<script>
+    // Selecciona todas las tarjetas de productos
+    const productCards = document.querySelectorAll('.product-card');
+    
+    // Añade event listeners a cada tarjeta
+    productCards.forEach(card => {
+        const img = card.querySelector('img');
+        
+        // Cuando el mouse entra en la tarjeta
+        card.addEventListener('mouseenter', () => {
+            const secondImage = img.getAttribute('data-second-image');
+            img.setAttribute('src', secondImage);
+        });
+        
+        // Cuando el mouse sale de la tarjeta
+        card.addEventListener('mouseleave', () => {
+            const firstImage = img.getAttribute('data-first-image');
+            img.setAttribute('src', firstImage);
+        });
+    });
+</script>
+
 <style>
     #image {
         width: 100%;
@@ -50,7 +76,13 @@ console.log (data);
         margin: 10px;
         border: grey 1px solid;
         border-radius: 8px;
+        transition: transform 0.2s ease; /* 1. Suaviza la animación */
     }
+
+    #card:hover {
+        transform: scale(1.03); /* 2. Aumenta un 3% el tamaño */
+    }
+
     .name {
         display: flex;
         flex-direction: row;
