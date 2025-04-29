@@ -16,7 +16,7 @@ Dentro del proyecto, verás la siguiente estructura de carpeta y archivos:
 └── package.json
 ```
 
-## 🧞 Commandos
+## 🧞 Comandos
 
 Todos los comandos se ejecutan desde la raíz del proyecto, desde una terminal:
 
