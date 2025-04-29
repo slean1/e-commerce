@@ -22,7 +22,7 @@ Todos los comandos se ejecutan desde la raíz del proyecto, desde una terminal:
 
 | Comando                   | Acción                                           |
 | :------------------------ | :----------------------------------------------- |
-| `git clone https://github.com/synthetichealth/synthea.git`             | Clonarás el repositorio                            |
+| `git clone https://github.com/slean1/e-commerce.git`             | Clonarás el repositorio                            |
 | `cd e-commerce`           | Accederás a la carpeta del proyecto              |
 | `npm install`             | Instalar dependencias                            |
 | `npm run dev`             | Inicia dev server local en `localhost:4321`      |
